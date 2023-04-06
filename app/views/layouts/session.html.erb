@@ -1,0 +1,6 @@
+<% if @user.present? %>
+    <div>Logged in as: <%= @user.email %>
+    <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+<% else %>
+    <%= link_to "Login", login_path, class: "btn btn-primary" %>
+<% end %>
