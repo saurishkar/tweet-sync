@@ -14,5 +14,19 @@
         </li>
       </ul>
     </div>
-  </div>
+    <% if @user.present? %>
+      <div class="px-4">
+        <%= @user.email %>
+      </div>
+      <div class="px-4">
+        <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+      </div>
+    <% else %>
+      <div class="px-4">
+        <% last = request.path.split("/").last %>
+        <% if last != "login" %>
+          <%= link_to "Login", login_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    <% end %>
 </nav>
