@@ -1,0 +1,26 @@
+<h1>Change Password </h1>
+
+<%= form_with local: true, url: change_password_path, method: :patch do |form| %>
+    <div class="form-group mb-3 w-50">
+        <% if @errors.present? %>
+            <div class="alert-danger my-3 py-3">
+                <% @errors.each do |msg| %>
+                    <div class="px-3"><%= msg %></div>
+                <% end %>
+            </div>
+        <% end %>
+        <div class="mb-3">
+            <%= form.label "Current Password" %>
+            <%= form.password_field :old_password, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= form.label "New Password" %>
+            <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= form.label "Confirm New Password" %>
+            <%= form.password_field :password_confirmation, class: "form-control" %>
+        </div>
+    </div>
+    <%= form.submit "Update Password", class: "btn btn-primary" %>
+<% end %>
