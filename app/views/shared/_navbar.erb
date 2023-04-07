@@ -14,9 +14,9 @@
         </li>
       </ul>
     </div>
-    <% if @user.present? %>
+    <% if Current.user.present? %>
       <div class="px-4">
-        <%= @user.email %>
+        <%= link_to Current.user.email, change_password_path, class: "nav-link" %>
       </div>
       <div class="px-4">
         <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
