@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   get "/change_password", to: "password#edit"
   patch "/change_password", to: "password#update"
 
+  get "/forgot_password", to: "guest#password_reset"
+  post "/forgot_password", to: "guest#send_password_reset_email"
+
+  get "/password_reset", to: "guest#password_reset_edit"
+  post "/password_reset", to: "guest#password_reset_update"
+
   get "/signup", to: "registrations#new"
   post "/signup", to: "registrations#create"
 
