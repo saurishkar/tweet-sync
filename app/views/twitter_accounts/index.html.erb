@@ -1,1 +1,14 @@
 <h1>Twitter Accounts</h1>
+
+<div class="account-list mt-5">
+    <% @twitter_accounts.each do |account| %>
+        <div class="card" style="width: 18rem;">
+            <%= image_tag account.image, class: "card-img-top" %>
+            <div class="card-body">
+                <h5 class="card-title"><%= account.name %></h5>
+            </div>
+            <%= button_to "Disconnect", account, method: :delete, class: "btn btn-danger" %>
+        </div>
+    <% end %>
+</div>
+
