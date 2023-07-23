@@ -26,5 +26,8 @@
       <%= form.text_area :body, class: "form-control" %>
     </div>
   </div>
-  <%= form.submit "Create", class: "btn btn-primary" %>
+  <div>
+  <%= form.submit "Create", class: "btn btn-primary w-25" %>
+  <%= link_to "Cancel", tweets_path, class: "btn btn-secondary w-25" %>
+  </div>
 <% end %>

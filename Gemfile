@@ -34,6 +34,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'erb-formatter'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '~> 3.2'
   gem 'web-console', '>= 3.3.0'
@@ -58,5 +59,3 @@ gem 'omniauth-twitter', '~> 1.4'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
 gem 'validates_timeliness', '~> 6.0.1'
-
-gem 'erb-formatter'

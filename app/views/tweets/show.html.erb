@@ -1,10 +1,15 @@
-<h1>Your scheduled tweet</h1>
+<div class="d-flex justify-content-between">
+  <h1>Your scheduled tweet</h1>
+  <%= link_to "Back to All Tweets",
+  tweets_path,
+  class: "btn btn-secondary px-4 d-flex align-items-center" %>
+</div>
 <div class="card mt-5" style="width: 40rem;">
   <div class="card-body">
     <h5 class="card-title"><%= @tweet.body %></h5>
     <p><span>Scheduled for:
       </span>
-      <%= @tweet.publish_at.strftime('%F, %T') %>
+      <%= @tweet.publish_at.strftime("%F, %T") %>
     </p>
   </div>
 </div>
