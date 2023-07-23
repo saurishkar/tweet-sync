@@ -1,0 +1,10 @@
+<h1>Your scheduled tweet</h1>
+<div class="card mt-5" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @tweet.body %></h5>
+    <p><span>Scheduled for:
+      </span>
+      <%= @tweet.publish_at.strftime('%F, %T') %>
+    </p>
+  </div>
+</div>

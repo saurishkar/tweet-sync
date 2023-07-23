@@ -1,0 +1,25 @@
+<div class="d-flex">
+  <h1>Tweets</h1>
+
+  <% if Current.user.twitter_accounts.any? %>
+    <%= link_to "Schedule Tweet", new_tweet_path, class: "btn btn-primary" %>
+  <% else %>
+    <%= button_to "Link Twitter Account",
+    "/auth/twitter",
+    method: :post,
+    class: "btn btn-primary" %>
+  <% end %>
+</div>
+<% if @tweets.length %>
+  <div class="d-flex my-5">
+    <% @tweets.each do |tweet| %>
+      <div class="card mr-3" style="width: 25rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= tweet.body %></h5>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No Tweets available</p>
+<% end %>
