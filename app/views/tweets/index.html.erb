@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-between">
+  <h1>My Scheduled Tweets</h1>
+
+  <% if Current.user.twitter_accounts.any? %>
+    <%= link_to "Schedule Tweet",
+    new_tweet_path,
+    class: "btn btn-primary d-flex align-items-center px-3" %>
+  <% else %>
+    <%= button_to "Link Twitter Account",
+    "/auth/twitter",
+    method: :post,
+    class: "btn btn-primary d-flex align-items-center px-3" %>
+  <% end %>
+</div>
+<% if @tweets.length %>
+  <div class="d-flex my-5 w-100 flex-wrap">
+    <% @tweets.each do |tweet| %>
+      <a href="/tweets/<%= tweet.id %>" class="text-reset text-decoration-none">
+        <div class="card m-3" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= tweet.body %></h5>
+            <div class="d-flex justify-content-end align-items-center">
+              <h6 class="mx-3">
+                <i>
+                  @<%= tweet.twitter_account.username %>
+                </i>
+              </h6>
+              <div class="img-thumbail rounded justify-content-end">
+                <%= image_tag tweet.twitter_account.image, class: "" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+<% else %>
+  <p>No Tweets available</p>
+<% end %>
