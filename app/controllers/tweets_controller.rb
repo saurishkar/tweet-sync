@@ -20,12 +20,35 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
+    @tweet = set_tweet
+  end
+
+  def edit
+    @tweet = set_tweet
+  end
+
+  def update
+    @tweet = set_tweet
+    if @tweet.update(tweet_params)
+      redirect_to @tweet, notice: 'Tweet has been successfully updated'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @tweet = set_tweet
+    @tweet.destroy
+    redirect_to tweets_path, notice: 'Tweet has been deleted'
   end
 
   private
 
   def tweet_params
     params.require(:tweet).permit(:body, :publish_at, :twitter_account_id)
+  end
+
+  def set_tweet
+    Current.user.tweets.find(params[:id])
   end
 end
