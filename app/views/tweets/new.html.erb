@@ -15,6 +15,7 @@
                                :username,
                                {},
                                { class: "form-control" } %>
+        <%= link_to "Connect your twitter account", "/auth/twitter" %>
       </div>
       <div class="col-6 my-3">
         <%= form.label "Publish Date", class: "form-label" %>
@@ -27,7 +28,7 @@
     </div>
   </div>
   <div>
-  <%= form.submit "Create", class: "btn btn-primary w-25" %>
-  <%= link_to "Cancel", tweets_path, class: "btn btn-secondary w-25" %>
+    <%= form.submit "Create", class: "btn btn-primary w-25" %>
+    <%= link_to "Cancel", tweets_path, class: "btn btn-secondary w-25" %>
   </div>
 <% end %>

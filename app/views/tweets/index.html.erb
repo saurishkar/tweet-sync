@@ -19,6 +19,16 @@
         <div class="card m-3" style="width: 25rem;">
           <div class="card-body">
             <h5 class="card-title"><%= tweet.body %></h5>
+            <div class="d-flex justify-content-end align-items-center">
+              <h6 class="mx-3">
+                <i>
+                  @<%= tweet.twitter_account.username %>
+                </i>
+              </h6>
+              <div class="img-thumbail rounded justify-content-end">
+                <%= image_tag tweet.twitter_account.image, class: "" %>
+              </div>
+            </div>
           </div>
         </div>
       </a>
