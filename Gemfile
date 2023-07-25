@@ -59,3 +59,6 @@ gem 'omniauth-twitter', '~> 1.4'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
 gem 'validates_timeliness', '~> 6.0.1'
+
+
+gem "tweetkit", "~> 0.2.0"
