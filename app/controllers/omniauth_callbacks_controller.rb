@@ -6,8 +6,8 @@ class OmniauthCallbacksController < ApplicationController
                                 name: auth.info.name,
                                 username: auth.info.nickname,
                                 image: auth.info.image,
-                                token: auth.info.token,
-                                secret: auth.info.secret
+                                token: auth.credentials.token,
+                                secret: auth.credentials.secret
                               )
     @twitter_account.save
     redirect_to root_path, notice: 'Successfully connected your twitter account'

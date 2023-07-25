@@ -13,4 +13,10 @@ class Tweet < ApplicationRecord
   def published?
     tweet_id?
   end
+
+  def publish_to_twitter!
+    tweet = twitter_account.client.post_tweet({ text: body })
+    debugger
+    update(tweet_id: tweet.response["data"]["id"].to_i)
+  end
 end
