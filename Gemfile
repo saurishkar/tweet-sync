@@ -62,3 +62,5 @@ gem 'validates_timeliness', '~> 6.0.1'
 
 
 gem "tweetkit", "~> 0.2.0"
+
+gem "sidekiq", "~> 7.1"
